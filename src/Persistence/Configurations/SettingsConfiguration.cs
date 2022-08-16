@@ -10,7 +10,6 @@ public class SettingsConfiguration : IEntityTypeConfiguration<Settings>
     {
         builder.HasKey(e => e.UserId);
         builder.Property(e => e.UserId).HasColumnName("UserID");
-        builder.Property(e => e.MeasuresTime).HasColumnType("datetime");
         builder.HasOne(d => d.User)
             .WithOne(p => p.Settings)
             .OnDelete(DeleteBehavior.ClientSetNull)

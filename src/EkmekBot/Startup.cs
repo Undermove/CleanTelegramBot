@@ -12,7 +12,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Notifications;
 using Persistence;
 using Telegram.Bot;
 
@@ -79,7 +78,6 @@ public class Startup
         services.AddPersistence(Configuration);
         services.AddHealthChecks().AddDbContextCheck<EkmekBotDbContext>();
         services.AddInfrastructure();
-        services.AddNotifications(Configuration);
         
         services.AddHostedService<CreateWebhook>();
     }
@@ -99,11 +97,9 @@ public class Startup
 
         app.UseRouting();
 
-        app.UseAuthentication();  
+        app.UseAuthentication();
         app.UseAuthorization();
         
-        app.UseNotifications();
-
         app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
     }
 }

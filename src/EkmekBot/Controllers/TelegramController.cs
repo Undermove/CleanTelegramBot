@@ -1,7 +1,6 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.New.Users.Queries;
 using Infrastructure.New.StateManagement;
 using Infrastructure.New.StateManagement.Models;
 using Microsoft.AspNetCore.Authorization;

@@ -1,4 +1,3 @@
-using Application.New.Common.Interfaces;
 using Application.New.Settings.Commands;
 using Application.New.Settings.Queries;
 using Infrastructure.New.StateManagement.Models;
