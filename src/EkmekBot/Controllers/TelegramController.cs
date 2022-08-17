@@ -39,8 +39,7 @@ public class TelegramController : Controller
         {
             return;
         }
-
-        // todo: 
+        
         var userRequest = new UserRequest(request);
 
         try
@@ -50,7 +49,7 @@ public class TelegramController : Controller
         catch (Exception e)
         {
             await _telegramBotClient.SendTextMessageAsync(userRequest.UserTelegramId,
-                "Прости, кажется у меня что-то сломалось 😞 Попробуй еще раз через несколько минут.", cancellationToken: cancellationToken);
+                "Sorry, can not process your request 😞", cancellationToken: cancellationToken);
             _logger.LogInformation(e, "Exception while processing request from user: {User} with command {Command}",
                 userRequest.UserTelegramId, userRequest.Text);
         }

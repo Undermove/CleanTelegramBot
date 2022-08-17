@@ -30,10 +30,7 @@ public class StartCommand : IBotCommand
         }, token);
 
         await _client.SendTextMessageAsync(request.UserTelegramId,
-            "Hi i'm your template bot! 🥖" +
-            "\r\nЯ буду помогать тебе вести дневник своих мыслей." +
-            "\r\nВсе записи я буду хранить в Google-таблице." +
-            "\r\nСкинь мне свой gmail, чтобы я мог создать её для тебя",
+            "Hi i'm your template bot! 🥖",
             cancellationToken: token);
     }
 }
