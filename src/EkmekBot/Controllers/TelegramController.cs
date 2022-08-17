@@ -55,19 +55,4 @@ public class TelegramController : Controller
                 userRequest.UserTelegramId, userRequest.Text);
         }
     }
-
-    [Authorize]
-    [HttpPost("[action]")]
-    public async Task<IActionResult> CreateWebhook(string url)
-    {
-        try
-        {
-            await _telegramBotClient.SetWebhookAsync($"{url.Trim()}", dropPendingUpdates: true);
-            return Ok("Success");
-        }
-        catch (Exception e)
-        {
-            return Problem(e.Message);
-        }
-    }
 }

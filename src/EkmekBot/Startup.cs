@@ -3,14 +3,11 @@ using Application.New;
 using EkmekBot.Common;
 using EkmekBot.HostedServices;
 using Infrastructure.New;
-using Infrastructure.New.Auth;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using Persistence;
 using Telegram.Bot;
 
@@ -28,54 +25,21 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers()
-            .AddJsonOptions(options=>
+            .AddJsonOptions(options =>
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()))
             .AddNewtonsoftJson();
 
-        services.AddSwaggerGen(c =>  
-        {  
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "BasicAuth", Version = "v1" });  
-            c.AddSecurityDefinition("basic", new OpenApiSecurityScheme  
-            {  
-                Name = "Authorization",  
-                Type = SecuritySchemeType.Http,  
-                Scheme = "basic",  
-                In = ParameterLocation.Header,  
-                Description = "Basic Authorization header using the Bearer scheme."  
-            });  
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement  
-            {  
-                {  
-                    new OpenApiSecurityScheme  
-                    {  
-                        Reference = new OpenApiReference  
-                        {  
-                            Type = ReferenceType.SecurityScheme,  
-                            Id = "basic"  
-                        }  
-                    },  
-                    new string[] {}  
-                }  
-            });  
-        });  
-
         var botConfig = Configuration.GetSection("BotConfiguration").Get<BotConfiguration>();
         services.AddSingleton(botConfig);
-
-        var authConfig = Configuration.GetSection("AuthConfiguration").Get<AuthConfiguration>();
-        services.AddSingleton(authConfig);
-        services.AddAuthentication("BasicAuthentication")  
-            .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);  
-  
-        services.AddScoped<IUserService, UserService>();
-        services.AddScoped(_ => 
+        
+        services.AddScoped(_ =>
             new TelegramBotClient(botConfig.Token)
         );
         services.AddApplication();
         services.AddPersistence(Configuration);
         services.AddHealthChecks().AddDbContextCheck<EkmekBotDbContext>();
         services.AddInfrastructure();
-        
+
         services.AddHostedService<CreateWebhook>();
     }
 
@@ -94,9 +58,6 @@ public class Startup
 
         app.UseRouting();
 
-        app.UseAuthentication();
-        app.UseAuthorization();
-        
         app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
     }
 }
