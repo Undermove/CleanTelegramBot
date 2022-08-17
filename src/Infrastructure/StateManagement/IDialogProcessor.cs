@@ -1,6 +1,6 @@
-using Infrastructure.New.StateManagement.Models;
+using Infrastructure.StateManagement.Models;
 
-namespace Infrastructure.New.StateManagement;
+namespace Infrastructure.StateManagement;
 
 public interface IDialogProcessor
 {

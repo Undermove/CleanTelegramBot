@@ -1,6 +1,6 @@
 using Telegram.Bot.Types;
 
-namespace Infrastructure.New.StateManagement.Models;
+namespace Infrastructure.StateManagement.Models;
 
 public class UserRequest
 {

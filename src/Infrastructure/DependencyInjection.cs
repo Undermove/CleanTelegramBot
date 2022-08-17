@@ -1,10 +1,10 @@
-using Application.New.Common;
-using Infrastructure.New.StateManagement;
-using Infrastructure.New.StateManagement.BotCommands;
+using Application.Common;
+using Infrastructure.StateManagement;
+using Infrastructure.StateManagement.BotCommands;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence;
 
-namespace Infrastructure.New;
+namespace Infrastructure;
 
 public static class DependencyInjection
 {

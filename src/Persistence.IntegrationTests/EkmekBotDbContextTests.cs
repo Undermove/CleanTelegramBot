@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using Domain.New.Entities;
+using Domain.Entities;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;

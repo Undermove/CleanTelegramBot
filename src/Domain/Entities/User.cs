@@ -1,5 +1,5 @@
 // ReSharper disable PropertyCanBeMadeInitOnly.Global
-namespace Domain.New.Entities;
+namespace Domain.Entities;
 
 public class User
 {

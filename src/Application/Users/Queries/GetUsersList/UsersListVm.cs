@@ -1,6 +1,6 @@
-using Domain.New.Entities;
+using Domain.Entities;
 
-namespace Application.New.Users.Queries.GetUsersList;
+namespace Application.Users.Queries.GetUsersList;
 
 public class UsersListVm
 {

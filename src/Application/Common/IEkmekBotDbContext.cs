@@ -1,7 +1,7 @@
-using Domain.New.Entities;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.New.Common;
+namespace Application.Common;
 
 public interface IEkmekBotDbContext
 {

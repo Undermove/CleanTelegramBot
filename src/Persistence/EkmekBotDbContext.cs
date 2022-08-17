@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
-using Application.New.Common;
-using Domain.New.Entities;
+using Application.Common;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistence;

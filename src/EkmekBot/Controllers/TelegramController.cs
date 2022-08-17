@@ -1,8 +1,8 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Infrastructure.New.StateManagement;
-using Infrastructure.New.StateManagement.Models;
+using Infrastructure.StateManagement;
+using Infrastructure.StateManagement.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

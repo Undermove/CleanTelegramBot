@@ -1,7 +1,7 @@
-using Infrastructure.New.StateManagement.BotCommands;
-using Infrastructure.New.StateManagement.Models;
+using Infrastructure.StateManagement.BotCommands;
+using Infrastructure.StateManagement.Models;
 
-namespace Infrastructure.New.StateManagement;
+namespace Infrastructure.StateManagement;
 
 public class DialogProcessor: IDialogProcessor
 {

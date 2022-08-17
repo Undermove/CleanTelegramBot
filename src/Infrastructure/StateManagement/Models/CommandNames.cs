@@ -1,4 +1,4 @@
-namespace Infrastructure.New.StateManagement.Models;
+namespace Infrastructure.StateManagement.Models;
 
 public static class CommandNames
 {

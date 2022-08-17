@@ -1,6 +1,6 @@
-using Infrastructure.New.StateManagement.Models;
+using Infrastructure.StateManagement.Models;
 
-namespace Infrastructure.New.StateManagement.BotCommands;
+namespace Infrastructure.StateManagement.BotCommands;
 
 public interface IBotCommand
 {

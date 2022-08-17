@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
-using Application.New;
+using Application;
 using EkmekBot.Common;
 using EkmekBot.HostedServices;
-using Infrastructure.New;
+using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

@@ -1,9 +1,9 @@
-using Application.New.Users.Commands;
-using Infrastructure.New.StateManagement.Models;
+using Application.Users.Commands;
+using Infrastructure.StateManagement.Models;
 using MediatR;
 using Telegram.Bot;
 
-namespace Infrastructure.New.StateManagement.BotCommands;
+namespace Infrastructure.StateManagement.BotCommands;
 
 public class StartCommand : IBotCommand
 {
