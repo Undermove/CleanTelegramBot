@@ -1,10 +1,7 @@
-using Application.New.Settings.Commands;
 using Application.New.Users.Commands;
-using Application.New.Users.Queries;
 using Infrastructure.New.StateManagement.Models;
 using MediatR;
 using Telegram.Bot;
-using Telegram.Bot.Types.ReplyMarkups;
 
 namespace Infrastructure.New.StateManagement.BotCommands;
 

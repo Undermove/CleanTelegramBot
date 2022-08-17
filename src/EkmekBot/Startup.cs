@@ -2,7 +2,6 @@ using System.Text.Json.Serialization;
 using Application.New;
 using EkmekBot.Common;
 using EkmekBot.HostedServices;
-using EkmekBot.Jobs;
 using Infrastructure.New;
 using Infrastructure.New.Auth;
 using Microsoft.AspNetCore.Authentication;
@@ -69,7 +68,6 @@ public class Startup
             .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);  
   
         services.AddScoped<IUserService, UserService>();
-        services.AddHostedService<ReminderJob>();
         services.AddScoped(_ => 
             new TelegramBotClient(botConfig.Token)
         );

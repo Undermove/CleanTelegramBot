@@ -14,5 +14,4 @@ public class EkmekBotDbContext : DbContext, IEkmekBotDbContext
         
     }
     public DbSet<User> Users { get; set; } = null!;
-    public DbSet<Settings> Settings { get; set; } = null!;
 }
